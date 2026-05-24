@@ -181,7 +181,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     fetchData();
 
     // Connect socket
-    const s = io('http://localhost:5000');
+    const s = io(import.meta.env.PROD ? window.location.origin : 'http://localhost:5000');
 
     s.on('connect', () => {
       console.log('Successfully bound Socket.IO client stream.');
