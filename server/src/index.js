@@ -21,6 +21,15 @@ const io = new Server(server, {
 app.use(cors());
 app.use(express.json());
 
+// Normalization middleware for serverless (Netlify/Vercel)
+app.use((req, res, next) => {
+  // If the request comes in with the Netlify function prefix, rewrite it to /api
+  if (req.url.startsWith('/.netlify/functions/api')) {
+    req.url = req.url.replace('/.netlify/functions/api', '/api');
+  }
+  next();
+});
+
 const PORT = process.env.PORT || 5000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/errix';
 
