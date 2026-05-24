@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-charcoal: #0F172A;
+  --color-electric-purple: #8B5CF6;
+  --color-neon-blue: #3B82F6;
+  --color-glass-bg: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #94A3B8;
+  
+  --color-severity-critical: #EF4444;
+  --color-severity-medium: #F59E0B;
+  --color-severity-low: #10B981;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0F1117] text-slate-200 antialiased font-sans overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl shadow-xl;
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+  
+  .glow-button {
+    @apply relative overflow-hidden rounded-lg font-medium transition-all duration-300;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+  }
+  
+  .glow-button:hover {
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
+    transform: translateY(-1px);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0F1117; 
+}
+::-webkit-scrollbar-thumb {
+  background: #334155; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569; 
+}
