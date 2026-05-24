@@ -55,7 +55,7 @@ interface AppContextType {
   isAnalyzing: boolean;
   activeIncidentId: string | null;
   setActiveIncidentId: (id: string | null) => void;
-  simulateFailure: (scenarioId: string) => Promise<void>;
+  simulateFailure: (scenarioId: string) => Promise<any>;
   clearSimulation: () => void;
   toggleIntegration: (provider: string, config?: any) => Promise<void>;
   logout: () => Promise<void>;
