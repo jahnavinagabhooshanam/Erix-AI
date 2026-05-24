@@ -63,7 +63,7 @@ interface AppContextType {
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = '/api';
 
 const initialLatency: LatencyPoint[] = [
   { time: '00:00', latency: 120, baseline: 115 },

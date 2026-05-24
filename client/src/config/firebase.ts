@@ -36,7 +36,7 @@ const listeners = new Set<AuthListener>();
 let currentMockUser: any = null;
 let isInitialized = false;
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = '/api';
 
 const initSession = async () => {
   const token = localStorage.getItem('errix_auth_token');

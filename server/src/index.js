@@ -795,6 +795,9 @@ io.on('connection', (socket) => {
   console.log('Client dashboard socket connected:', socket.id);
 });
 
-server.listen(PORT, () => {
-  console.log(`Errix backend server listening on port ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  server.listen(PORT, () => {
+    console.log(`Errix backend server listening on port ${PORT}`);
+  });
+}
+export default app; // Export for Vercel serverless functions

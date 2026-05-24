@@ -69,7 +69,9 @@ export default function Simulation() {
     setSimError(null);
     try {
       const result = await simulateFailure(id);
-      setLastResult(result);
+      if (result) {
+        setLastResult(result);
+      }
     } catch (e: any) {
       console.error('Failure simulation failed:', e);
       setSimError(e?.message || 'Simulation failed. Please try again.');
